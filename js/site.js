@@ -64,7 +64,7 @@ var data = [{
 ];
 
 // the default display for all users
-var filteredList = data;
+let filteredList = JSON.parse(localStorage.getItem('userArray')) || data;
 
 // build a dropdown for specific users
 function buildDropDown() {
@@ -232,9 +232,11 @@ function saveUserData() {
 
         curUser.push(obj);
         localStorage.setItem('userArray', JSON.stringify(curUser));
-        displayData();
-        buildDropDown()
+        
         dismissBtn.click();
+        displayData();
+        buildDropDown();
+        displayStatsSystolic();
     } else {
         dismissBtn.click();
         Swal.fire({

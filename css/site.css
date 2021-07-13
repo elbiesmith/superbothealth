@@ -84,3 +84,10 @@
        background-color: #a5cd37;
        color: black;
    }
+
+   .check-box {
+       color: #8A2387;
+   }
+   .btn-box-color:hover {
+       background-color: #8a2387;
+   }
