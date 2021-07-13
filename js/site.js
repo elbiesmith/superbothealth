@@ -1,4 +1,4 @@
-var data = [{
+let data = [{
         name: 'John',
         age: 24,
         systolic: 95,
@@ -62,6 +62,8 @@ var data = [{
         date: "01/25/2021"
     }
 ];
+let displayedUser = '';
+
 
 // the default display for all users
 let filteredList = JSON.parse(localStorage.getItem('userArray')) || data;
@@ -89,6 +91,7 @@ function buildDropDown() {
 
 function getUsers(element) {
     let user = element.getAttribute('data-string')
+    displayedUser = element;
     let curUser = JSON.parse(localStorage.getItem('userArray')) || data;
     filteredList = curUser;
     document.getElementById('statsHeader').innerHTML = `Stats for ${user}`
@@ -235,8 +238,8 @@ function saveUserData() {
         
         dismissBtn.click();
         displayData();
+        getUsers(displayedUser);
         buildDropDown();
-        displayStatsSystolic();
     } else {
         dismissBtn.click();
         Swal.fire({
