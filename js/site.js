@@ -237,6 +237,11 @@ function saveUserData() {
         dismissBtn.click();
     } else {
         dismissBtn.click();
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Please Fill out Important Data'
+        })
     }
 }
 
