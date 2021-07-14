@@ -95,3 +95,10 @@
    .border-color-purple {
        border-color:#8A2387 !important;
    }
+
+   .sticky-footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+   }
