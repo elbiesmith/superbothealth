@@ -91,3 +91,7 @@
    .btn-box-color:hover {
        background-color: #8a2387;
    }
+
+   .border-color-purple {
+       border-color:#8A2387 !important;
+   }
