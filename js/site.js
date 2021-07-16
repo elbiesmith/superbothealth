@@ -176,8 +176,6 @@ function displayStatsDiastolic() {
     document.getElementById('averageType').innerHTML = 'Average Diastolic';
     document.getElementById('highestType').innerHTML = 'Highest Diastolic';
     document.getElementById('lowestType').innerHTML = 'Lowest Diastolic';
-
-
 }
 
 function displayData() {
@@ -235,12 +233,12 @@ function saveUserData() {
 
         curUser.push(obj);
         localStorage.setItem('userArray', JSON.stringify(curUser));
-        
+
         dismissBtn.click();
         displayData();
         buildDropDown();
         getUsers(displayedUser);
-        
+
     } else {
         dismissBtn.click();
         Swal.fire({
@@ -250,7 +248,6 @@ function saveUserData() {
         })
     }
 }
-
 
 function resetData() {
     localStorage.clear();
