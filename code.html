@@ -367,10 +367,7 @@ function clearForm() {
                                         If the user clicked is not "Everyone" we populate filterdList with the chosen
                                         user's data and call our display.
                                     </p>
-                                    <p class="border-top border-2 text-center">
-                                        <a href="https://www.w3schools.com/js/js_arithmetic.asp"
-                                            target="_blank">Arithmetic</a>
-                                    </p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -390,6 +387,10 @@ function clearForm() {
                                         We initialize some variables, and loop over our current user data (filteredList).
                                         We get the total, average, maximum and minimum then add them to the top table. 
                                     </p>
+                                    <p class="border-top border-2 text-center">
+                                        <a href="https://www.w3schools.com/js/js_arithmetic.asp"
+                                            target="_blank">Arithmetic</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -405,8 +406,12 @@ function clearForm() {
                                 <div class="accordion-body">
                                     <strong>displayData()</strong>
                                     <p>
-
+                                        Using a loop, take the data we have stored in local storage or the default data and display 
+                                        it in the bottom table. If the readings falls into one of the categories (crisis, 
+                                        stageTwo, stageOne, elevated, normal) change the row background color to match the 
+                                        blood pressure chart.
                                     </p>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -420,12 +425,17 @@ function clearForm() {
                             <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>saveUserData()</strong> It is hidden by default,
-                                    until the collapse plugin adds the appropriate classes that we use to style each
-                                    element. These classes control the overall appearance, as well as the showing and
-                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                    our default variables. It's also worth noting that just about any HTML can go within
-                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <strong>saveUserData()</strong> 
+                                    <p>Get data from the form on the newUserData Modal and assign it to the obj variable.
+                                        if there is data in the name, systolic and diastolic input forms, push the data to
+                                        local storage, and to the screen. If its not, use <a
+                                            href="https://sweetalert2.github.io/" target="_blank">sweetalert</a> to alert the user.
+                                    </p>
+                                    <p>
+                                        Error handling was tricky here, since the modal closes when the button is pressed. If there is no invalid
+                                        input, a hidden button is pressed to close the modal. then the display is updated. If there is invalid
+                                        input, the hidden button is clicked and the sweetalert is triggered.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -439,12 +449,8 @@ function clearForm() {
                             <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>resetData() | clearForm()</strong> It is hidden by default,
-                                    until the collapse plugin adds the appropriate classes that we use to style each
-                                    element. These classes control the overall appearance, as well as the showing and
-                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                    our default variables. It's also worth noting that just about any HTML can go within
-                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <strong>resetData() | clearForm()</strong>resetData simply erases localStorage for this site, and refreshes the page.
+                                    clearForm empties the contents of the form so that new readings can easily be added.
                                 </div>
                             </div>
                         </div>
