@@ -238,8 +238,9 @@ function saveUserData() {
         
         dismissBtn.click();
         displayData();
-        getUsers(displayedUser);
         buildDropDown();
+        getUsers(displayedUser);
+        
     } else {
         dismissBtn.click();
         Swal.fire({
