@@ -258,3 +258,4 @@ function resetData() {
 function clearForm() {
     document.getElementById('newUserForm').reset();
 }
+

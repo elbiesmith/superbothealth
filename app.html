@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/css/site.css">
 </head>
 
-<body class="d-flex flex-column h-100" onload='buildDropDown()'>
+<body class="d-flex flex-column h-100">
 
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -170,7 +170,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-danger" onclick='resetData()'>Reset
+                                            <button type="button" class="btn btn-danger" id="btnResetData">Reset
                                                 Data</button>
                                         </div>
                                     </div>
@@ -303,13 +303,12 @@
     <script src="/js/site.js"></script>
     <script>
         document.getElementById('submitBtn').addEventListener('click', saveUserData);
-    </script>
-    <script>
+        document.getElementById('btnResetData').addEventListener('click', resetData)
         document.getElementById('btnSystolic').addEventListener('click', displayStatsSystolic);
-    </script>
-    <script>
         document.getElementById('btnDiastolic').addEventListener('click', displayStatsDiastolic);
+        window.onload = buildDropDown;
     </script>
+       
 </body>
 
 </html>

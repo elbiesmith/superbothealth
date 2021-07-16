@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-8">
                     <h3 class="border-bottom border-2 border-color-purple check-box">The Code</h5>
-                    <pre>
+                        <pre>
                         <code class="language-Javascript line-numbers">
 let data = [{name: 'John', age: 24, systolic: 95, diastolic: 60, date: "01/25/2021"},
             {name: 'John', age: 24, systolic: 111, diastolic: 67, date: "01/25/2021"},
@@ -264,42 +264,131 @@ function clearForm() {
                 </div>
                 <div class="col">
                     <h3 class="border-bottom border-2 border-color-purple check-box">Functionality</h3>
-                    <p>SuperBot Health uses localStorage to keep track of blood pressure readings. It uses the following data and functions.</p>
+                    <p>SuperBot Health uses localStorage to keep track of blood pressure readings. It uses the following
+                        data and functions.</p>
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item accordion">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     The Data
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    I randomly generated blood pressure readings for 3 users. The data ranges from normal to extreme readings, and you'll see
-                                    how I used it to generate a table that gives them a visual representation. I've also included a chart directly from <a href=""></a>
+                                    <p>
+                                        I randomly generated blood pressure readings for 3 users. The data ranges from
+                                        normal to extreme readings, and you'll see
+                                        how I used it to generate a table that gives them a visual representation. I've
+                                        also
+                                        included a chart directly from <a href="https://www.heart.org/">heart.org</a> to
+                                        help understand the readings.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Accordion Item #2
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Global Variables
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <ul>
+                                        <li><strong>data</strong>: our default data-set</li>
+                                        <li>
+                                            <strong>displayedUser</strong>: the current user selected in our dropdown.
+                                            Used for real time
+                                            screen updates</li>
+                                        <li><strong>filteredList</strong>: Working list. If there is something in local
+                                            storage, we'll use it, if not we'll use the defalut data</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    buildDropdown
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>buildDropdown()</strong>
+                                    <p>Get a handle on our dropdown menu and our data object. we get distinct users from
+                                        our data using a Set() and .map(). Map returns an object with key value pairs
+                                        holding an index as the key, and all the names as the value. Set removes all the
+                                        duplicates so that we only have one of each person in the menu.
+                                    </p>
+                                    <p> We loop through our distinctUsers and add them to the menu, with an anchor tag
+                                        that calls the function getUser(this) when clicked. In this instance "this"
+                                        refers to the
+                                        element that called the function (the anchor tag) Finally we call our display
+                                        functions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    getUsers
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>getUsers(element)</strong>
+                                    <p>
+                                        When this is called, it takes in the element that calls it. The element is expected to have 
+                                        a data-string attribute with the name of the user. When we built our menu, we added this for 
+                                        each of our items. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     Accordion Item #3
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                                    our default variables. It's also worth noting that just about any HTML can go within
+                                    the <code>.accordion-body</code>, though the transition does limit overflow.
                                 </div>
                             </div>
                         </div>
@@ -339,6 +428,7 @@ function clearForm() {
     <script src="/js/prism.js"></script>
     <script src="/js/site.js"></script>
 
+    
 </body>
 
 </html>
