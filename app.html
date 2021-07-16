@@ -52,135 +52,152 @@
         <div class="heartContainer">
             <div class="row">
                 <div class="col-sm-6">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary">Search</button>
-                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="visually-hidden">Toggle Dropdown</span></button>
-                        <div id="eventDropDown" class="dropdown-menu">
-                            <!--Template for dropdown-->
+                    <div class="card">
+                        <div class="card-body text-light bg-dark">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary">Search</button>
+                                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span></button>
+                                <div id="eventDropDown" class="dropdown-menu">
+                                    <!--Template for dropdown-->
 
+                                </div>
+                            </div>
+                            <table class='table table-striped table-dark'>
+                                <thead>
+                                    <tr>
+                                        <th colspan='4' id='statsHeader'>Stats for Everyone</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id='totalType'>Total Systolic</td>
+                                        <td id=total>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td id='averageType'>Average Systolic</td>
+                                        <td id='average'>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td id='highestType'>Highest Systolic</td>
+                                        <td id='highest'>100</td>
+                                    </tr>
+                                    <tr>
+                                        <td id='lowestType'>Lowest Systolic</td>
+                                        <td id='lowest'>100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-group">
+                                <button class="btn btn-secondary" id="btnSystolic">Systolic</button>
+                                <button class="btn btn-secondary" id="btnDiastolic">Diastolic</button>
+                            </div>
                         </div>
-                    </div>
-                    <table class='table table-striped'>
-                        <thead>
-                            <tr>
-                                <th colspan='4' id='statsHeader'>Stats for Everyone</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td id='totalType'>Total Systolic</td>
-                                <td id=total>100</td>
-                            </tr>
-                            <tr>
-                                <td id='averageType'>Average Systolic</td>
-                                <td id='average'>100</td>
-                            </tr>
-                            <tr>
-                                <td id='highestType'>Highest Systolic</td>
-                                <td id='highest'>100</td>
-                            </tr>
-                            <tr>
-                                <td id='lowestType'>Lowest Systolic</td>
-                                <td id='lowest'>100</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary" id="btnSystolic">Systolic</button>
-                        <button class="btn btn-secondary" id="btnDiastolic">Diastolic</button>
                     </div>
                 </div>
                 <div class="col-sm-6  order-first order-sm-2 ">
                     <div class="row">
                         <div class="col-3"></div>
                         <div class='col-5'>
-                            <img src="img/robotLogo.png" alt="" class="img-fluid">
+                            <img src="img/robotLogo.png" alt="" class="img-fluid" id='robot'>
                         </div>
                         <div class="col"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 mt-5">
-                <button class='btn btn-secondary' data-bs-toggle="modal" data-bs-target="#myModal">Add
-                    Reading</button>
+            <div class="row">
+                <div class="card bg-dark ">
+                    <div class="card-body">
+                        <div class="col-sm-12 ">
+                            <button class='btn btn-secondary' data-bs-toggle="modal" data-bs-target="#myModal">Add
+                                Reading</button>
 
 
-                <!-- Button trigger modal blood pressure chart -->
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#bpChart">
-                    Blood Pressure Chart
-                </button>
+                            <!-- Button trigger modal blood pressure chart -->
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#bpChart">
+                                Blood Pressure Chart
+                            </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="bpChart" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">How to read your Blood Pressure
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"></span>
-                                </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="bpChart" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">How to read your Blood
+                                                Pressure
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="img/bpChart.jpg" class='img-fluid' alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <img src="img/bpChart.jpg" class='img-fluid' alt="">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!-- Button trigger modal reset data -->
+                            <button type="button" class="btn btn-danger float-sm-end d-none d-md-block"
+                                data-bs-toggle="modal" data-bs-target="#dataResetModal">
+                                Reset Data
+                            </button>
 
+                            <!-- Modal -->
+                            <div class="modal fade" id="dataResetModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Warning!</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            This action will reset your data to the default data set.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-danger" onclick='resetData()'>Reset
+                                                Data</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <table class="table table-responsive-sm" id='userData'>
+                                <thead class='table-dark'>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Age</th>
+                                        <th>Systolic</th>
+                                        <th>Diastolic</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id='userBody'>
+                                    <!-- User data goes here -->
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-danger float-sm-start d-md-none d-sm-block"
+                                data-bs-toggle="modal" data-bs-target="#dataResetModal">
+                                Reset Data
+                            </button>
                         </div>
                     </div>
                 </div>
-                <!-- Button trigger modal reset data -->
-                <button type="button" class="btn btn-danger float-sm-end d-none d-md-block" data-bs-toggle="modal"
-                    data-bs-target="#dataResetModal">
-                    Reset Data
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="dataResetModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Warning!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                This action will reset your data to the default data set.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-danger" onclick='resetData()'>Reset
-                                    Data</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <table class="table table-responsive-sm" id='userData'>
-                    <thead class='table-dark'>
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Systolic</th>
-                            <th>Diastolic</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id='userBody'>
-                        <!-- User data goes here -->
-                    </tbody>
-                </table>
-                <button type="button" class="btn btn-danger float-sm-start d-md-none d-sm-block" data-bs-toggle="modal"
-                    data-bs-target="#dataResetModal">
-                    Reset Data
-                </button>
+                
             </div>
             <div class="modal" id="myModal">
                 <div class="modal-dialog">

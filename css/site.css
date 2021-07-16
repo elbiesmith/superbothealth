@@ -102,3 +102,6 @@
        bottom: 0;
        width: 100%;
    }
+   #robot {
+       max-height: 25em;
+   }
