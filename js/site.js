@@ -234,6 +234,7 @@ function saveUserData() {
         curUser.push(obj);
         localStorage.setItem('userArray', JSON.stringify(curUser));
 
+        clearForm();
         dismissBtn.click();
         displayData();
         buildDropDown();
@@ -252,4 +253,8 @@ function saveUserData() {
 function resetData() {
     localStorage.clear();
     window.location.reload();
+}
+
+function clearForm() {
+    document.getElementById('newUserForm').reset();
 }
