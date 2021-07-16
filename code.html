@@ -77,13 +77,13 @@ function buildDropDown() {
 
     // get distinct users from the data array
     curUser = JSON.parse(localStorage.getItem('userArray')) || data;
-    let distinctUsers = [...new Set(curUser.map(data => data.name))];
+    let distinctUsers = [...new Set(curUser.map(data =&gt; data.name))];
 
-    let linHTMLEnd = '<div class="dropdown-divider"></div><a class="dropdown-item" onclick="getUsers(this)" data-string="Everyone">Everyone</a>';
+    let linHTMLEnd = '&lt;div class="dropdown-divider"&gt;&lt;/div&gt;&lt;a class="dropdown-item" onclick="getUsers(this)" data-string="Everyone"&gt;Everyone&lt;/a&gt;';
     let resultHTML = ""
 
-    for (let i = 0; i < distinctUsers.length; i++) {
-        resultHTML += `<a class='dropdown-item' onclick='getUsers(this)' data-string='${distinctUsers[i]}'>${distinctUsers[i]}</a>`;
+    for (let i = 0; i &lt; distinctUsers.length; i++) {
+        resultHTML += `&lt;a class='dropdown-item' onclick='getUsers(this)' data-string='${distinctUsers[i]}'&gt;${distinctUsers[i]}&lt;/a&gt;`;
     }
     resultHTML += linHTMLEnd;
     eventDD.innerHTML = resultHTML;
@@ -115,15 +115,15 @@ function displayStatsSystolic() {
     let lowest = -1;
     let currentValue = 0;
 
-    for (let i = 0; i < filteredList.length; i++) {
+    for (let i = 0; i &lt; filteredList.length; i++) {
         currentValue = filteredList[i].systolic;
         total += currentValue;
 
-        if (highest < currentValue) {
+        if (highest &lt; currentValue) {
             highest = currentValue;
         }
 
-        if (lowest > currentValue || lowest < 0) {
+        if (lowest &gt; currentValue || lowest &lt; 0) {
             lowest = currentValue;
         }
     }
@@ -152,15 +152,15 @@ function displayStatsDiastolic() {
     let lowest = -1;
     let currentValue = 0;
 
-    for (let i = 0; i < filteredList.length; i++) {
+    for (let i = 0; i &lt; filteredList.length; i++) {
         currentValue = filteredList[i].diastolic;
         total += currentValue;
 
-        if (highest < currentValue) {
+        if (highest &lt; currentValue) {
             highest = currentValue;
         }
 
-        if (lowest > currentValue || lowest < 0) {
+        if (lowest &gt; currentValue || lowest &lt; 0) {
             lowest = currentValue;
         }
     }
@@ -192,7 +192,7 @@ function displayData() {
         localStorage.setItem('userArray', JSON.stringify(curUser))
     }
 
-    for (let i = 0; i < curUser.length; i++) {
+    for (let i = 0; i &lt; curUser.length; i++) {
         const userRow = document.importNode(template.content, true)
         userCols = userRow.querySelectorAll("td")
         userRow.getElementById('user').textContent = curUser[i].name;
@@ -201,13 +201,13 @@ function displayData() {
         userRow.getElementById('diastolic').textContent = curUser[i].diastolic;
         userRow.getElementById('readingDate').textContent = new Date(curUser[i].date).toLocaleDateString();
 
-        if (curUser[i].systolic >= 180 || curUser[i].diastolic >= 120) {
+        if (curUser[i].systolic &gt;= 180 || curUser[i].diastolic &gt;= 120) {
             userRow.querySelector('tr').classList.add('crisis')
-        } else if (curUser[i].systolic >= 140 || curUser[i].diastolic >= 90) {
+        } else if (curUser[i].systolic &gt;= 140 || curUser[i].diastolic &gt;= 90) {
             userRow.querySelector('tr').classList.add('stageTwo')
-        } else if (curUser[i].systolic >= 130 || curUser[i].diastolic >= 80) {
+        } else if (curUser[i].systolic &gt;= 130 || curUser[i].diastolic &gt;= 80) {
             userRow.querySelector('tr').classList.add('stageOne')
-        } else if (curUser[i].systolic >= 120 && curUser[i].diastolic < 80) {
+        } else if (curUser[i].systolic &gt;= 120 && curUser[i].diastolic &lt; 80) {
             userRow.querySelector('tr').classList.add('elevated')
         } else {
             userRow.querySelector('tr').classList.add('normal')
